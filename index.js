@@ -2,15 +2,30 @@ window.onload = () => {
     const onButton = document.querySelector('#turn_on')
     const offButton = document.querySelector('#turn_off')
     const temp = document.querySelector('#temp')
+    const temps = document.querySelector('#temps')
     const report = document.querySelector('#report')
     const apiAddress = 'https://sandissa.sandyuraz.com:5000'
     report.style.display = 'none'
+
+    const arr60 = Array.from(Array(60),(x,i)=>i)
 
     getTemp = () => {
         makeGet(url = apiAddress + '/temp')
             .then(data => {
                 if (data[0] === 200) {
                     temp.innerHTML = "&emsp;&emsp;" + data[1].message + ' °C';
+                }
+            })
+    }
+
+    getTemps = () => {
+        makeGet(url = apiAddress + '/temps')
+            .then(data => {
+                if (data[0] === 200) {
+                    console.log(data)
+                    Plotly.newPlot(temps, [{
+	                x: arr60,
+	                y: data[1].message }])
                 }
             })
     }
@@ -75,8 +90,10 @@ window.onload = () => {
 
     // Get initial temperature
     getTemp()
+    getTemps()
     // Update temp value every second
     setInterval(getTemp, 1000)
+    setInterval(getTemps, 1000)
     
     onButton.addEventListener('click', turnON)
     offButton.addEventListener('click', turnOFF)
