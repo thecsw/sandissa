@@ -10,7 +10,7 @@ window.onload = () => {
         makeGet(url = apiAddress + '/temp')
             .then(data => {
                 if (data[0] === 200) {
-                    temp.innerHTML = "&emsp;&emsp;" + data[1].message + ' C';
+                    temp.innerHTML = "&emsp;&emsp;" + data[1].message + ' °C';
                 }
             })
     }
