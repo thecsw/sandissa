@@ -92,3 +92,9 @@ a:visited {
     color: white;
     background: #ff4081;
 }
+#temps {
+    background-color: #fffff4 !important;
+}
+.main-svg {
+   background-color: transparent !important;
+}
