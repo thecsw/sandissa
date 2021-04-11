@@ -9,7 +9,7 @@ window.onload = () => {
 	const arr60 = Array.from(Array(60), (x, i) => -i)
 	const myHeaders = {
 		'Content-Type': 'application/json',
-		'Authorization': 'c2FuZHk6bGlseQ=='
+		'Authorization': 'Basic c2FuZHk6bGlseQ=='
 	}
 
 	getTemp =
@@ -91,7 +91,7 @@ window.onload = () => {
 	async function makePost(url = '', data = {}) {
 		const response = await fetch(url, {
 			method: 'POST',
-			mode: 'cors',
+			mode: 'no-cors',
 			cache: 'no-cache',
 			headers: myHeaders,
 			redirect: 'follow',
@@ -105,7 +105,7 @@ window.onload = () => {
 	async function makeGet(url = '') {
 		const response = await fetch(url, {
 			method: 'GET',
-			mode: 'cors',
+			mode: 'no-cors',
 			cache: 'no-cache',
 			headers: myHeaders,
 			redirect: 'follow',
