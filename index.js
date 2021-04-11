@@ -34,6 +34,8 @@ window.onload = () => {
         } else {
                 // if cookie not found or doesn't check out against the auth, stop
                 // executing all javascript
+                dashboard.style.display = "none";
+                login.style.display = "block";
                 return;
         }
 
