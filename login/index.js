@@ -12,7 +12,7 @@ window.onload = () => {
                 if (parts.length === 2) return parts.pop().split(";").shift();
         };
         const setCookie = (what) => {
-                document.cookie = `user=${what};max-age=172800`;
+                document.cookie = `user=${what};max-age=172800;path=/;`;
         };
         // Immediately check if a user cookie exists
         const existingCookie = getCookie("user");
