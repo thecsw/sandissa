@@ -1,19 +1,24 @@
 <html>
     <head>
         <title>Sandissa</title>
-        <script src="plotly-latest.min.js"></script>
     </head>
     <link rel="stylesheet" type="text/css" href="./index.css">
     <body>
-        <h2>This is the current temperature in my living room</h2>
-        <code style="font-size:1.6em" id="temp">[ loading it... ]</code>
-        <div id="temps" style="width:600px;height:300px;"></div>
-        <p>
-            <h2>You can control the lights in my room!<h2>
-            <button class="button" id="turn_on">ON</button>
-            <button class="button" id="turn_off">OFF</button>
-        </p>
-        <div class="isa_success" id="report"></div>
-        <script src="index.js"></script>
+        <div id="dashboard" style="display:none">
+            <h2>This is the current temperature in my living room</h2>
+            <code style="font-size:1.6em" id="temp">[ loading it... ]</code>
+            <div id="temps" style="width:600px;height:300px;"></div>
+            <p>
+                <h2>You can control the lights in my room!<h2>
+                        <button class="button" id="turn_on">ON</button>
+                        <button class="button" id="turn_off">OFF</button>
+            </p>
+            <div class="isa_success" id="report"></div>
+            <script src="plotly-latest.min.js"></script>
+            <script src="index.js"></script>
+        </div>
+        <div id="login" class="isa_error" style="display: block">
+            Please login <a href="./login">here</a> first
+        </div>
     </body>
 </html>
