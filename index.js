@@ -17,7 +17,8 @@ window.onload = () => {
         };
 
         // Check if cookie exists, and if it does, check whether they're valid
-        const basicAuthToken = getCookie("user");
+    const basicAuthToken = getCookie("user");
+    console.log("Cookie:", basicAuthToken)
         if (basicAuthToken !== "" && typeof basicAuthToken !== "undefined") {
                 makePost((path = url + "/auth")).then((data) => {
                         // auth succeeded
