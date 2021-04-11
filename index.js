@@ -15,10 +15,11 @@ window.onload = () => {
                 const parts = value.split(`; ${what}=`);
                 if (parts.length === 2) return parts.pop().split(";").shift();
         };
+
+        // Check if cookie exists, and if it does, check whether they're valid
         const basicAuthToken = getCookie("user");
-        // Cookie exists
         if (basicAuthToken !== "" && typeof basicAuthToken !== "undefined") {
-                makePost((url = url + "/auth")).then((data) => {
+                makePost((path = url + "/auth")).then((data) => {
                         // auth succeeded
                         if (data[0] === 200) {
                                 dashboard.style.display = "block";
@@ -26,6 +27,8 @@ window.onload = () => {
                         }
                 });
         } else {
+                // if cookie not found or doesn't check out against the auth, stop
+                // executing all javascript
                 return;
         }
 
