@@ -37,10 +37,14 @@ window.onload = () => {
         login.addEventListener("click", (_e) => {
                 const user = username.value;
                 const pass = password.value;
+                if (user === "" || pass === "") {
+                        show_message("error", "empty credentials");
+                        return;
+                }
                 const encoded = btoa(user + ":" + pass);
                 authorizationHeader = "Basic " + encoded;
                 makePost(
-                        (url = url + "/auth"),
+                        (path = url + "/auth"),
                         (data = {}),
                         (auth = authorizationHeader)
                 ).then((data) => {
