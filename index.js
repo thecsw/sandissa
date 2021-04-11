@@ -8,15 +8,20 @@ window.onload = () => {
 	report.style.display = 'none'
 	const arr60 = Array.from(Array(60), (x, i) => -i)
 	const myHeaders = {
-		"Content-Type": "application/json",
-		"Authorization": "Basic c2FuZHk6bGlseQ=="
+		'Access-Control-Allow-Methods':
+			'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+		'Content-Type': 'application/json',
+		'Authorization': 'Basic c2FuZHk6bGlseQ==',
+		'Accept': '*/*',
+		'Accept-Encoding': 'gzip, deflate, br',
+		'Connection': 'keep-alive'
 	}
 
 	getTemp =
 		() => {
 			makeGet(url = apiAddress + '/temp').then(data => {
 				if (data[0] === 200) {
-					temp.innerHTML = "&emsp;&emsp;" +
+					temp.innerHTML = '&emsp;&emsp;' +
 							 data[1].message +
 							 ' °C';
 				}
