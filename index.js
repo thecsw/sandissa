@@ -7,6 +7,10 @@ window.onload = () => {
 	const apiAddress = 'https://sandissa.sandyuraz.com:5000'
 	report.style.display = 'none'
 	const arr60 = Array.from(Array(60), (x, i) => -i)
+	const myHeaders = {
+		'Content-Type': 'application/json',
+		'Authorization': 'c2FuZHk6bGlseQ=='
+	}
 
 	getTemp =
 		() => {
@@ -89,7 +93,7 @@ window.onload = () => {
 			method: 'POST',
 			mode: 'cors',
 			cache: 'no-cache',
-			headers: { 'Content-Type': 'application/json' },
+			headers: myHeaders,
 			redirect: 'follow',
 			referrerPolicy: 'no-referrer',
 			body: JSON.stringify(data)
@@ -103,7 +107,7 @@ window.onload = () => {
 			method: 'GET',
 			mode: 'cors',
 			cache: 'no-cache',
-			headers: { 'Content-Type': 'application/json' },
+			headers: myHeaders,
 			redirect: 'follow',
 			referrerPolicy: 'no-referrer',
 		})
