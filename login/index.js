@@ -18,7 +18,7 @@ window.onload = () => {
         const existingCookie = getCookie("user");
         if (existingCookie !== "" && typeof existingCookie !== "undefined") {
                 makePost(
-                        (url = url + "/auth"),
+                        (path = url + "/auth"),
                         (data = {}),
                         (auth = existingCookie)
                 ).then((data) => {
@@ -61,8 +61,8 @@ window.onload = () => {
                 setCookie("");
                 window.location.reload();
         });
-        async function makePost(url = "", data = {}, auth = "") {
-                const response = await fetch(url, {
+        async function makePost(path = "", data = {}, auth = "") {
+                const response = await fetch(path, {
                         method: "POST",
                         mode: "cors",
                         cache: "no-cache",
