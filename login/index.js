@@ -45,7 +45,7 @@ window.onload = () => {
         const pass = password.value;
         const encoded = btoa(user+":"+pass)
         authorizationHeader = 'Basic ' + encoded
-    postArk(url + "/auth").then((data) => {
+    makePost(url + "/auth").then((data) => {
       if (data[0] === 200) {
         show_message(
           "success",
