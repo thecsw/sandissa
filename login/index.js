@@ -1,5 +1,5 @@
 window.onload = () => {
-        const url = "https://sandissa.sandyuraz.com:5000/cmd";
+        const url = "https://sandissa.sandyuraz.com:3737/cmd";
         const username = document.querySelector("#username");
         const password = document.querySelector("#password");
         const login = document.querySelector("#loginbutton");

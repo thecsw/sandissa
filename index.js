@@ -1,5 +1,5 @@
 window.onload = () => {
-        const url = "https://sandissa.sandyuraz.com:5000/cmd";
+        const url = "https://sandissa.sandyuraz.com:3737/cmd";
         const onButton = document.querySelector("#turn_on");
         const offButton = document.querySelector("#turn_off");
         const temp = document.querySelector("#temp");
